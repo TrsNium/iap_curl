@@ -4,7 +4,6 @@ import (
 	"fmt"
 	homedir "github.com/mitchellh/go-homedir"
 	"io"
-	"log"
 	"os"
 )
 
@@ -40,12 +39,6 @@ func main() {
 }
 
 func newCLI(args []string) CLI {
-	logWriter, err := LogOutput()
-	if err != nil {
-		panic(err)
-	}
-	log.SetOutput(logWriter)
-
 	var c CLI
 
 	c.stdout = os.Stdout
